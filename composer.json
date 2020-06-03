@@ -1,5 +1,5 @@
 {
-	"name": "coderubix/pei",
+	"name": "coderubix/php-pei",
 	"type": "library",
 	"description": "pei payment gateway integration with php. api.pei.is - iceland",
 	"keywords": ["pei payment", "iceland payment gateway", "php pie payment"],
