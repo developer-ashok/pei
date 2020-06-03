@@ -1,0 +1,17 @@
+{
+    "name": "coderubix/pei",
+    "type": "library",
+    "description": "pei payment gateway integration with php. api.pei.is - iceland",
+    "keywords": ["pei payment","iceland payment gateway","php pie payment"],
+    "homepage": "http://coderubix.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ashok Chandrapal",
+            "email": "developer7039@gmail.com",
+            "homepage": "coderubix.com",
+            "role": "Expert Developer"
+        }
+    ],
+}
+
