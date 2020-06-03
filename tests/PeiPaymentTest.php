@@ -49,7 +49,14 @@ $order_info = [
 			'lastname' => 'martin',
 			'email' => 'mail@malinator.com'
 	],
-	'tax' => 0,
+	'tax' => [
+		'label' => 'Vat',
+		'amount' => 100
+	],
+	'shipping' => [
+		'label' => 'Shipping',
+		'amount' => 50
+	],
 	'items' => [
 		[
 			'name' => 'item 1',

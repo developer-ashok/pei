@@ -97,13 +97,24 @@ class PeiPayment
         }
 
         // checked $total > 0 here to make sure that the item are exists
-        if(isset($order_info['tax']) && (int)$order_info['tax'] > 0 && $total > 0){
-            $total = $total + $order_info['tax'];
+        if(isset($order_info['tax']['amount']) && (int)$order_info['tax']['amount'] > 0 && $total > 0){
+            $total = $total + $order_info['tax']['amount'];
             $fields['items'][] = array(
-                'name' => 'Tax',
+                'name' => $order_info['tax']['label'],
                 'quantity' => 1,
-                'amount' => $order_info['tax'],
-                'unitPrice' => $order_info['tax']
+                'amount' => $order_info['tax']['amount'],
+                'unitPrice' => $order_info['tax']['amount']
+            );   
+        }
+
+        // checked $total > 0 here to make sure that the item are exists
+        if(isset($order_info['shipping']['amount']) && (int)$order_info['shipping']['amount'] > 0 && $total > 0){
+            $total = $total + $order_info['shipping']['amount'];
+            $fields['items'][] = array(
+                'name' => $order_info['shipping']['label'],
+                'quantity' => 1,
+                'amount' => $order_info['shipping']['amount'],
+                'unitPrice' => $order_info['shipping']['amount']
             );   
         }
 
