@@ -46,7 +46,7 @@ class PeiPayment
 
     public function create_order_json($ssn, $order_info) {
 
-        if((int)$ssn <= 999999999){
+        if((int)$ssn <= 1111111111){
             return ['message'=> 'invalid Social Security Number!', 'error'=> true, 'data'=> []];
         }
         if((string)trim(@$order_info['order_id']) == "" || 
@@ -161,9 +161,13 @@ class PeiPayment
         // get auth token
         $auth_token = $this->authorize();
         $json_order = $this->create_order_json($ssn, $order_info);
-        $order_id = $this->get_order_id($json_order, $auth_token);    
-
-        header('Location: '.$this->data['payment_url'] . $order_id);
+        
+        if(is_array($json_order) && isset($json_order['error']) && $json_order['error'] == true){
+            return $json_order; // error
+        }else{
+            $order_id = $this->get_order_id($json_order, $auth_token);    
+            header('Location: '.$this->data['payment_url'] . $order_id);
+        }
     }
 
 }
