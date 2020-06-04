@@ -46,7 +46,7 @@ class PeiPayment
 
     public function create_order_json($ssn, $order_info) {
 
-        if((int)$ssn <= 1111111111){
+        if((int)$ssn < 1000000000){
             return ['message'=> 'invalid Social Security Number!', 'error'=> true, 'data'=> []];
         }
         if((string)trim(@$order_info['order_id']) == "" || 
