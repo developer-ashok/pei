@@ -1,5 +1,5 @@
 
-<p><a href="https://pei.is/" rel="nofollow noindex noopener external"><img src="https://developer.pei.is/img/pei_logo.svg" alt="PEI" height="100"></a> </p>
+<p><a href="https://pei.is/" rel="nofollow noindex noopener external"><img src="https://pei.is/media/1689/pei_logo_.png" alt="PEI" height="100"></a> </p>
 <h1>+</h1>
 <p>
 <a href="https://php.net/" rel="nofollow noindex noopener external"><img src="https://www.php.net/images/logos/php-logo.svg" alt="PHP" height="80"></a></p>
