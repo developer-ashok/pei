@@ -74,33 +74,33 @@ $ssn = 5554452454;
 $order_info = [
 	'order_id' => uniqid(),
 	'user' => [
-			'firstname' => 'ashok',
-			'lastname' => 'chandrapal',
-			'email' => 'developer7039@gmail.com'
+		'firstname' => 'ashok',
+		'lastname' => 'chandrapal',
+		'email' => 'developer7039@gmail.com'
 	],
-  //optional
+  	//optional
 	'tax' => [
 		'label' => 'Vat',
 		'amount' => 100
 	],
 	//optional
-  'shipping' => [
+  	'shipping' => [
 		'label' => 'Shipping',
 		'amount' => 50
 	],
 	'items' => [
 		[
-			  'name' => 'item 1',
-			  'code' => '#FFER23', //optional
-	      'quantity' => 20,	        
-	      'price' => 100
-	  ],
-	  [
-			  'name' => 'item 2',	        
-	      'quantity' => 30,	        
-	      'price' => 150
-	  ]    
-	]	
+			'name' => 'item 1',
+			'code' => '#FFER23', //optional
+			'quantity' => 20,
+			'price' => 100
+	  	],
+	  	[
+			'name' => 'item 2',	        
+			'quantity' => 30,
+			'price' => 150
+	  	]
+	]
 ];
 
 $PeiPayment->pay($ssn, $order_info);
