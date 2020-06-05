@@ -37,6 +37,15 @@ $config = [
 
 $PeiPayment = new PeiPayment($config, 'sandbox');
 
+
+//check postback and order detail using order id
+// $postback_data = json_decode(file_get_contents('php://input'));
+// $orderId = "Un6luxbtVYnBkNRcb5OSOuSQO8ZRlwXj"; //$postback_data->orderId
+// $returnData = $PeiPayment->postback($orderId);
+// echo "<pre>";
+// print_r($returnData);
+// exit();
+
 // get auth token
 //$auth_token = $PeiPayment->authorize();
 
