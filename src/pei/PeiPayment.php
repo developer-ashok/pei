@@ -83,15 +83,20 @@ class PeiPayment
         $total = 0;
         
         // Get and add product info to $fields
-        foreach ($order_info['items'] as $product) {
+        foreach ($order_info['items'] as $k=>$product) {
             $amount = $product['price'] * $product['quantity'];
 
-            $fields['items'][] = array(
+            $fields['items'][$k] = array(
                 'name' => $product['name'],
                 'quantity' => $product['quantity'],
                 'amount' => $amount,
                 'unitPrice' => $product['price']
             );      
+
+            //optioanl code - A reference in Order in the merchant's system
+            if(isset($product['code']) && $product['code'] !=""){
+                $fields['items'][$k]['code'] = $product['code'];                
+            }
 
             $total = $total + $amount;    
         }
@@ -99,12 +104,12 @@ class PeiPayment
         // checked $total > 0 here to make sure that the item are exists
         if(isset($order_info['tax']['amount']) && (int)$order_info['tax']['amount'] > 0 && $total > 0){
             $total = $total + $order_info['tax']['amount'];
-            $fields['items'][] = array(
+            $fields['items'][$k] = array(
                 'name' => $order_info['tax']['label'],
                 'quantity' => 1,
                 'amount' => $order_info['tax']['amount'],
                 'unitPrice' => $order_info['tax']['amount']
-            );   
+            );            
         }
 
         // checked $total > 0 here to make sure that the item are exists

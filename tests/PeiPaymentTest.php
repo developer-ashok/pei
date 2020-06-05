@@ -60,11 +60,12 @@ $order_info = [
 	'items' => [
 		[
 			'name' => 'item 1',
+			'code' => '#FFER23', //optional
 	        'quantity' => 20,	        
 	        'price' => 100
 	    ],
 	    [
-			'name' => 'item 2',
+			'name' => 'item 2',	        
 	        'quantity' => 30,	        
 	        'price' => 150
 	    ]    
