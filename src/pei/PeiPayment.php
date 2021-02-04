@@ -44,12 +44,12 @@ class PeiPayment
         }
     }
 
-    public function create_order_json($ssn, $order_info) {
+    public function create_order_json($ssn="", $order_info) {
 
         //if((int)$ssn < 1000000000){
-        if(!preg_match("/^[0-9]{10}+$/i", $ssn)){
-            return ['message'=> 'invalid Social Security Number!', 'error'=> true, 'data'=> []];
-        }
+        // if(!preg_match("/^[0-9]{10}+$/i", $ssn)){
+        //     return ['message'=> 'invalid Social Security Number!', 'error'=> true, 'data'=> []];
+        // }
         if((string)trim(@$order_info['order_id']) == "" || 
            (string)trim(@$order_info['user']['firstname']) == "" ||
            (string)trim(@$order_info['user']['lastname']) == "" || 
